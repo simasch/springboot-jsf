@@ -15,6 +15,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <c:choose>
+                        <!--suppress ELValidationInJSP -->
                         <c:when test="#{page == 'index'}">
                             <h:outputLink class="nav-link active" value="index.jsf">Home</h:outputLink>
                         </c:when>
@@ -25,6 +26,7 @@
                 </li>
                 <li class="nav-item">
                     <c:choose>
+                        <!--suppress ELValidationInJSP -->
                         <c:when test="#{page == 'about'}">
                             <h:outputLink class="nav-link active" value="about.jsf">About</h:outputLink>
                         </c:when>
@@ -35,7 +37,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
             </form>
         </div>

@@ -4,6 +4,7 @@ import hr.entity.Employee;
 import hr.repository.EmployeeRepository;
 import org.springframework.web.context.annotation.RequestScope;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
@@ -11,11 +12,8 @@ import java.util.List;
 @RequestScope
 public class EmployeeBean {
 
-    private final EmployeeRepository repository;
-
-    public EmployeeBean(EmployeeRepository repository) {
-        this.repository = repository;
-    }
+    @Inject
+    private EmployeeRepository repository;
 
     public List<Employee> getEmployees() {
         return repository.findAll();
