@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<body>
+<ui:composition template="template.xhtml">
+    <ui:define name="header">
+        <ui:include src="header.xhtml"></ui:include>
+    </ui:define>
 
-<h:body>
-    <ui:composition template="template.xhtml">
-        <ui:define name="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h1>Employees</h1>
+    <ui:define name="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h1>Employees</h1>
 
-                        <table>
-                            <thead>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="#{employeeBean.employees}" var="employee">
                             <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
+                                <td>#{employee.id}</td>
+                                <td>#{employee.name}</td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="#{employeeBean.employees}" var="employee">
-                                <tr>
-                                    <td>#{employee.id}</td>
-                                    <td>#{employee.name}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-
-                    </div>
+                        </c:forEach>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </ui:define>
-    </ui:composition>
-</h:body>
+        </div>
+    </ui:define>
+</ui:composition>
+</body>
 </html>
